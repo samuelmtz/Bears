@@ -18,28 +18,49 @@ import java.awt.event.MouseEvent;
  * @author samuelmartinezdelcampo
  */
 class Ice extends Environment {
-    
+
     Grid grid;
-        
-        public Ice(){
-            grid= new Grid(35, 25, 25, 25, new Point(10,50),Color.PINK);
-        }
-    
+
+    public Ice() {
+        grid = new Grid(35, 25, 25, 25, new Point(10, 50), Color.PINK);
+    }
 
     @Override
     public void initializeEnvironment() {
     }
+    int counter;
 
     @Override
     public void timerTaskHandler() {
+//        System.out.println("Hey dude.." + ++counter);
     }
 
     @Override
     public void keyPressedHandler(KeyEvent e) {
+
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            System.out.println("Go left!");
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            System.out.println("Go right!");
+        } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+            System.out.println("Go up!");
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            System.out.println("Go down!");
+        }
     }
 
     @Override
     public void keyReleasedHandler(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_W) {
+            System.out.println("Key released - UP");
+        }
+           if (e.getKeyCode() == KeyEvent.VK_A) {
+            System.out.println("Key released - LEFT");
+        }   if (e.getKeyCode() == KeyEvent.VK_S) {
+            System.out.println("Key released - DOWN");
+        }   if (e.getKeyCode() == KeyEvent.VK_D) {
+            System.out.println("Key released - RIGHT");
+        }
     }
 
     @Override
@@ -50,9 +71,9 @@ class Ice extends Environment {
 
     @Override
     public void paintEnvironment(Graphics graphics) {
-        if (grid != null){
+        if (grid != null) {
             grid.paintComponent(graphics);
         }
     }
-    
+
 }
