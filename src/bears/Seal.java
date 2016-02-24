@@ -118,7 +118,7 @@ public class Seal {
    }
 
     public  Rectangle rectangle() {
-        return new Rectangle(x, y, image.getWidth(null), image.getHeight(null));
+        return new Rectangle(x, y, image.getWidth(null), image.getHeight(null)); 
     }
 }
     

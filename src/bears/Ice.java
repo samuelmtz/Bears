@@ -236,11 +236,11 @@ class Ice extends Environment implements CellDataProviderIntf {
             ovalY = ovalY + 17;
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            AudioPlayer.play("/bears/Laser.wav");
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             if (health <= 1) {
             lasers.add(new Laser(laser, ovalX, ovalY, 60));
+             AudioPlayer.play("/bears/Laser");
         }
         }
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -336,9 +336,10 @@ class Ice extends Environment implements CellDataProviderIntf {
             if (seals != null) {
                 for (Seal seal : seals) {
                     if (rectangle().intersects(seal.rectangle())) {
-                        health += 1;
+                        health += 2;
                         //moveiceberg
                         seal.setY(-1000);
+                        AudioPlayer.play("/bears/BEAR.wav");
                     }
 
                 }
