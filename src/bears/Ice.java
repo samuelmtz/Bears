@@ -240,7 +240,7 @@ class Ice extends Environment implements CellDataProviderIntf {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             if (health <= 1) {
             lasers.add(new Laser(laser, ovalX, ovalY, 60));
-             AudioPlayer.play("/bears/Laser");
+             AudioPlayer.play("/bears/LASER.wav");
         }
         }
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
